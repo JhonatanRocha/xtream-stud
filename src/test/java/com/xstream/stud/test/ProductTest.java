@@ -12,7 +12,7 @@ public class ProductTest {
 	@Test
 	public void mustGenerateXMLWithNamePriceAndDescription() {
 		
-		String resultadoEsperado = "<product skuCode=\"1587\">\n" +
+		String expectedResult = "<product skuCode=\"1587\">\n" +
 		        "  <name>geladeira</name>\n" +
 		        "  <price>1000.0</price>\n" +
 		        "  <description>geladeira duas portas</description>\n" +
@@ -26,6 +26,6 @@ public class ProductTest {
 		xstream.alias("product", Product.class);
 		String xmlGerado = xstream.toXML(geladeira);
 		
-		assertEquals(resultadoEsperado, xmlGerado);
+		assertEquals(expectedResult, xmlGerado);
 	}
 }
