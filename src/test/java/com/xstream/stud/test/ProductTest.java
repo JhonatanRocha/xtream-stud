@@ -5,9 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.thoughtworks.xstream.XStream;
-import com.xstream.stud.util.PriceConverter;
-import com.xstream.stud.util.PriceSimpleConverter;
 import com.xstream.stud.model.Product;
+import com.xstream.stud.util.PriceSimpleConverter;
 
 public class ProductTest {
 	

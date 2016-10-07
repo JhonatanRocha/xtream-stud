@@ -12,6 +12,7 @@ import com.xstream.stud.model.Book;
 import com.xstream.stud.model.Music;
 import com.xstream.stud.model.Order;
 import com.xstream.stud.model.Product;
+import com.xstream.stud.util.DifferentOrderConverter;
 
 public class OrderTest {
 
@@ -154,6 +155,48 @@ public class OrderTest {
 		 String xmlGerado = xstream.toXML(order);
 
 	     assertEquals(expectedResult, xmlGerado);
+	}
+	
+	@Test
+	public void mustUseConverterFullyCustomized() {
+		String expectedResult = "<order style=\"new\">\n" 
+	            + "  <id>15</id>\n"
+				+ "  <retailer>jhonatan.rocha@ecommerce.com</retailer>\n"
+				+ "  <address>\n"
+				+ "    <line1>No Where Street 999</line1>\n"
+				+ "    <line2>Floor 567 - Orlando - FL</line2>\n"
+				+ "  </address>\n"
+	            + "  <products>\n" 
+	            + "    <product skuCode=\"1587\">\n"
+	            + "      <name>geladeira</name>\n"
+	            + "      <price>1000.0</price>\n"
+	            + "      <description>geladeira duas portas</description>\n"
+	            + "    </product>\n"
+	            + "    <product skuCode=\"1587\">\n"
+	            + "      <name>geladeira</name>\n"
+	            + "      <price>1000.0</price>\n"
+	            + "      <description>geladeira duas portas</description>\n"
+	            + "    </product>\n"
+	            + "  </products>\n" 
+	            + "</order>";
+
+	    Order order = orderMustHaveTwoGeladeirasEquals();
+
+	    XStream xstream = xstreamParaCompraEProduto();
+
+	    xstream.registerConverter(new DifferentOrderConverter());
+	    
+//	    xstream.setMode(XStream.XPATH_ABSOLUTE_REFERENCES);
+//	    xstream.setMode(XStream.ID_REFERENCES);
+	    xstream.setMode(XStream.NO_REFERENCES);
+	    
+	    String xmlGerado = xstream.toXML(order);
+
+	    assertEquals(expectedResult, xmlGerado);
+	    
+	    Order deserializedOrder = (Order) xstream.fromXML(xmlGerado);
+	    
+	    assertEquals(order, deserializedOrder);
 	}
 
 	private XStream xstreamParaCompraEProduto() {
