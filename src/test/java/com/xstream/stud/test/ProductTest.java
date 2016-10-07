@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.thoughtworks.xstream.XStream;
+import com.xstream.stud.util.PriceConverter;
+import com.xstream.stud.util.PriceSimpleConverter;
 import com.xstream.stud.model.Product;
 
 public class ProductTest {
@@ -14,7 +16,7 @@ public class ProductTest {
 		
 		String expectedResult = "<product skuCode=\"1587\">\n" +
 		        "  <name>geladeira</name>\n" +
-		        "  <price>1000.0</price>\n" +
+		        "  <price>R$ 1.000,00</price>\n" +
 		        "  <description>geladeira duas portas</description>\n" +
 		        "</product>";
 		
@@ -24,6 +26,9 @@ public class ProductTest {
 		
 		xstream.useAttributeFor(Product.class, "skuCode");
 		xstream.alias("product", Product.class);
+		xstream.registerLocalConverter(Product.class, "price", new PriceSimpleConverter());
+//		xstream.registerLocalConverter(Product.class, "price", new PriceConverter());
+		
 		String xmlGerado = xstream.toXML(geladeira);
 		
 		assertEquals(expectedResult, xmlGerado);
