@@ -13,6 +13,10 @@ This repository the full course files from the [course](https://cursos.alura.com
 > - `Class 5` : Customizing the process with custom conversors
 > - `Class 6` : Complex converters
 
+## Certificate
+[![CC0](http://image.flaticon.com/icons/png/128/230/230357.png)](https://cursos.alura.com.br/user/jcristianrocha/course/xstream/certificate)] |
+---|
+[Finished ✓](https://cursos.alura.com.br/user/jcristianrocha/course/xstream/certificate) |
 
 ## Author
 [![Jhonatan Rocha](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAXnAAAAJDJiMGJjYTUyLWU5NzUtNDU4Yi1iYTYxLWU4OGU2MTAwMmQ5OA.jpg)](https://jhonatanrocha.github.io) |
