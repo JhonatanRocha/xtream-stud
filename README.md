@@ -14,7 +14,7 @@ This repository the full course files from the [course](https://cursos.alura.com
 > - `Class 6` : Complex converters
 
 ## Certificate
-[![CC0](http://image.flaticon.com/icons/png/128/230/230357.png)](https://cursos.alura.com.br/user/jcristianrocha/course/xstream/certificate)] |
+[![CC0](http://image.flaticon.com/icons/png/128/230/230357.png)](https://cursos.alura.com.br/user/jcristianrocha/course/xstream/certificate) |
 ---|
 [Finished ✓](https://cursos.alura.com.br/user/jcristianrocha/course/xstream/certificate) |
 
